@@ -1,6 +1,7 @@
 #include "../game_manager.h"
 #include "scene_play.h"
 #include "scene_result.h"
+#include "my_game_scene.h"
 
 void ScenePlay::initialzie() {
 	camera_ = new dxe::Camera( DXE_WINDOW_WIDTH, DXE_WINDOW_HEIGHT );
@@ -35,7 +36,7 @@ void ScenePlay::update(float delta_time)
 	sprite_->rot_ = tnl::Quaternion::LookAtAxisY(camera_->pos_, sprite_->pos_);
 
 	if (tnl::Input::IsKeyDownTrigger(eKeys::KB_RETURN)) {
-		mgr->chengeScene(new SceneResult());
+		mgr->chengeScene(new MyGameScene());
 	}
 }
 
