@@ -1,5 +1,7 @@
+#pragma once
 #include "scene_base.h"
 #include "../model/anim_sprite3d.h"
+#include "../object.h"
 
 class MyGameScene : public SceneBase {
 public:
@@ -9,8 +11,8 @@ public:
 	}
 
 	dxe::Camera* camera_ = nullptr;
-	dxe::Mesh* body_ = nullptr;
-	
+	std::list<Object*> objects;
+
 	float speed_ = 1;
 
 	void initialzie() override;
