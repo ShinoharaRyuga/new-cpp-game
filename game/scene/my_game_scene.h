@@ -11,7 +11,7 @@ public:
 	}
 
 	dxe::Camera* camera_ = nullptr;
-	std::list<Object*> objects;
+	std::list<Object*> objects_;
 
 	float speed_ = 1;
 

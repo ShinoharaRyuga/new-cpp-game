@@ -1,5 +1,9 @@
 #include "player_tank.h"
 
+PlayerTank::PlayerTank(dxe::Camera* camera):Object::Object(camera) {
+	camera_ = camera;
+}
+
 void PlayerTank::initialzie() {
 	object_ = dxe::Mesh::CreateBoxMV(50);
 	object_->setTexture(dxe::Texture::CreateFromFile("graphics/box.bmp"));

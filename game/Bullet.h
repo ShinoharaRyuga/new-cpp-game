@@ -2,12 +2,12 @@
 #include "./scene/my_game_scene.h"
 #include "object.h"
 
-class Bullet : public Object {
+class Bullet {
 public:
 	Bullet() {}
 
 	float speed_ = 1;
 
-	void initialzie() override;
-	void update(float delta_time) override;
+	void initialzie() ;
+	void update(float delta_time) ;
 };

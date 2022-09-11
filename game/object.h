@@ -1,15 +1,17 @@
 #pragma once
-#include "./scene/my_game_scene.h"
 #include "model/anim_sprite3d.h"
 
-class Object : public MyGameScene {
+class Object {
 public:
-	Object(){};
+	Object(dxe::Camera* camera);
 	~Object() {};
 
 	dxe::Mesh* object_ = nullptr;
+	dxe::Camera* camera_ = nullptr;
 
 	virtual void initialzie() {};
 	virtual void update(float delta_time) {};
 	void render();
 };
+
+

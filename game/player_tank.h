@@ -1,8 +1,9 @@
 #include "object.h"
 
 class PlayerTank : public Object {
+	using Object::Object;
 public:
-	PlayerTank() {};
+	PlayerTank(dxe::Camera* camera);
 
 	int hp_ = 10;
 	int speed_ = 3;
