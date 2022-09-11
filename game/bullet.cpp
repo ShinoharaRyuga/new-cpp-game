@@ -4,9 +4,10 @@ Bullet :: Bullet(dxe::Camera* camera) : Object::Object(camera) {
 	camera_ = camera;
 }
 
-void Bullet::initialzie(tnl::Vector3 generate_pos) {
+void Bullet::initialzie(tnl::Vector3 generate_pos, tnl::Quaternion rot) {
 	object_ = dxe::Mesh::CreateSphereMV(10);
 	object_->pos_ = generate_pos;
+	object_->rot_q_ = rot;
 }
 
 void Bullet::update(float delta_time) {

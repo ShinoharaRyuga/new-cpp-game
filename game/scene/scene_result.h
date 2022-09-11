@@ -1,4 +1,5 @@
 #include "scene_base.h"
+#include "my_game_scene.h"
 
 class SceneResult : public SceneBase {
 public:

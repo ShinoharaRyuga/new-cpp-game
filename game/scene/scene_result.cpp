@@ -12,6 +12,7 @@ void SceneResult::update(float delta_time)
 
 	if (tnl::Input::IsKeyDownTrigger(eKeys::KB_RETURN)) {
 		mgr->chengeScene(new SceneTitle());
+		mgr->chengeScene(new MyGameScene());
 	}
 }
 

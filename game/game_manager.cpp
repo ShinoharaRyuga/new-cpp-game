@@ -1,13 +1,15 @@
 #include "game_manager.h"
 #include "scene/scene_base.h"
 #include "scene/scene_title.h"
+#include "./scene/my_game_scene.h"
 
 GameManager* GameManager::instance_ = nullptr;
 
 //-----------------------------------------------------------------------------------------
 // コンストラクタ
 GameManager::GameManager() {
-	scene_now_ = new SceneTitle();
+	//scene_now_ = new SceneTitle();
+	scene_now_ = new MyGameScene();
 	scene_now_->initialzie();
 	img_black_ = LoadGraph("graphics/black.bmp");
 	SetBackgroundColor(32, 32, 32);
