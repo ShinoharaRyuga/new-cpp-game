@@ -1,13 +1,14 @@
-#include "./model/anim_sprite3d.h"
-#include "./scene/my_game_scene.h"
+#pragma once
 #include "object.h"
 
-class Bullet {
+class Bullet : public Object {
+	using Object::Object;
 public:
-	Bullet() {}
+	Bullet(dxe::Camera* camera);
+	~Bullet() {};
 
-	float speed_ = 1;
+	float speed_ = 10;
 
-	void initialzie() ;
-	void update(float delta_time) ;
+	void initialzie(tnl::Vector3 generate_pos);
+	void update(float delta_time) override;
 };
