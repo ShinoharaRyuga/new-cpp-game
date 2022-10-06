@@ -44,7 +44,7 @@ void ScenePlay::render()
 {
 	camera_->update();
 
-	DrawGridGround(50, 20);
+	DrawGridGround(camera_, 50, 20);
 
 	sprite_->render(camera_);
 

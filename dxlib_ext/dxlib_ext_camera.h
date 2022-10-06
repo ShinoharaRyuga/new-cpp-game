@@ -38,13 +38,12 @@ namespace dxe {
 		void update() {
 			view_ = tnl::Matrix::LookAtLH(pos_, target_, up_);
 			proj_ = tnl::Matrix::PerspectiveFovLH(angle_, aspect_, near_, far_);
-
-			MATRIX view, proj;
-			memcpy(view.m, view_.m, sizeof(float) * 16);
-			memcpy(proj.m, proj_.m, sizeof(float) * 16);
-			SetCameraViewMatrix(view);
-			SetupCamera_ProjectionMatrix(proj);
 		}
+
+		inline tnl::Vector3 front() { return tnl::Vector3::Normalize(target_ - pos_); }
+		inline tnl::Vector3 left() { return tnl::Vector3::Cross(front(), { 0, 1, 0 }); }
+		inline tnl::Vector3 right() { return tnl::Vector3::Cross({ 0, 1, 0 }, front()); }
+		inline tnl::Vector3 back() { return tnl::Vector3::Normalize(pos_ - target_); }
 
 	};
 
