@@ -11,7 +11,7 @@ void Enemy::initialzie() {
 }
 
 void Enemy::update(float delta_time) {
-
+	
 }
 
 void Enemy::getDamege(int damege) {

@@ -38,8 +38,13 @@ void PlayerTank::update(float delta_time) {
 
 	//’eŠÛ‚ð”­ŽË
 	if (tnl::Input::IsKeyDownTrigger(eKeys::KB_SPACE)) {
-		Bullet* bullet = new Bullet(camera_);
-		bullet->initialzie(muzzle_, object_->rot_q_);
-		game_scene_->objects_.push_back(bullet);
+		if (shotInterval_ <= time_ ) {
+			Bullet* bullet = new Bullet(camera_);
+			bullet->initialzie(muzzle_, object_->rot_q_);
+			game_scene_->objects_.push_back(bullet);
+			time_ = 0;
+		}	
 	}
+
+	time_ += delta_time;
 }

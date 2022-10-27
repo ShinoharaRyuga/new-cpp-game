@@ -13,6 +13,9 @@ public:
 
 	int hp_ = 10;
 	int speed_ = 3;
+	/// <summary>”­ŽËŠÔŠu </summary>
+	float shotInterval_ = 5;
+	float time_ = 0;
 
 	void getGameScene(MyGameScene* game_scene);
 	void initialzie() override;
